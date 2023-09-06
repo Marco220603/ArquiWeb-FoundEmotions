@@ -16,9 +16,10 @@ public class Genero {
     public Genero() {
     }
 
-    public Genero(int id_genero, String nameGenero) {
+    public Genero(int id_genero, String nameGenero, Artista artista) {
         this.id_genero = id_genero;
         this.nameGenero = nameGenero;
+        this.artista = artista;
     }
 
     public int getId_genero() {

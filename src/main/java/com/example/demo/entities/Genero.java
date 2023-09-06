@@ -22,10 +22,12 @@ public class Genero {
     public Genero() {
     }
 
-    public Genero(int id_genero, String nameGenero, Artista artista) {
+    public Genero(int id_genero, String nameGenero, Artista artista, Temperamento temperamento, Canciones canciones) {
         this.id_genero = id_genero;
         this.nameGenero = nameGenero;
         this.artista = artista;
+        this.temperamento = temperamento;
+        this.canciones = canciones;
     }
 
     public int getId_genero() {

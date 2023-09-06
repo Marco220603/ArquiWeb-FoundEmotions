@@ -24,12 +24,14 @@ public class CompartirPlaylist {
     public CompartirPlaylist() {
     }
 
-    public CompartirPlaylist(int id_compartirPlaylist, Playlist playlist_id, Usuarios usuario_id, String elementoID, String destinoID) {
+    public CompartirPlaylist(int id_compartirPlaylist, Playlist playlist_id, Usuarios usuario_id, String elementoID, String destinoID, Playlist playlist, Usuarios usuarios) {
         this.id_compartirPlaylist = id_compartirPlaylist;
         this.playlist_id = playlist_id;
         this.usuario_id = usuario_id;
         this.elementoID = elementoID;
         this.destinoID = destinoID;
+        this.playlist = playlist_id;
+        this.usuarios = usuario_id;
     }
 
     public int getId_compartirPlaylist() {

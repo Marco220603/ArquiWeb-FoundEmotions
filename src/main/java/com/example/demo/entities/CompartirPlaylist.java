@@ -73,4 +73,20 @@ public class CompartirPlaylist {
     public void setDestinoID(String destinoID) {
         this.destinoID = destinoID;
     }
+    
+    public Playlist getPlaylist() {
+        return playlist;
+    }
+
+    public void setPlaylist(Playlist playlist) {
+        this.playlist = playlist;
+    }
+
+    public Usuarios getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
+    }
 }

@@ -52,4 +52,20 @@ public class Genero {
     public void setArtista(Artista artista) {
         this.artista = artista;
     }
+
+    public Temperamento getTemperamento(){
+        return temperamento;
+    }
+    
+    public void setTemperamento(Temperamento temperamento){
+        this.temperamento = temperamento;
+    }
+    
+    public Canciones getCanciones(){
+        return canciones;
+    }
+
+    public void setCanciones(Canciones canciones) {
+        this.canciones = canciones;
+    }
 }

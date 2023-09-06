@@ -37,4 +37,11 @@ public class Genero {
     public void setNameGenero(String nameGenero) {
         this.nameGenero = nameGenero;
     }
+    public Artista getArtista() {
+        return artista;
+    }
+
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
 }

@@ -5,6 +5,8 @@ public class Artista {
     private String nameArtista;
     private Genero genero_id;
 
+    //holaaaaa
+
     public Artista() {
     }
 

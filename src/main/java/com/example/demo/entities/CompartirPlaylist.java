@@ -1,10 +1,18 @@
 package com.example.demo.entities;
 
+@Entity
+@Table (name="CompartirPlaylists")
 public class CompartirPlaylist {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_compartirPlaylist;
+    @Column(name="playlist", nullable = false)
     private Playlist playlist_id;
+    @Column(name="usuarios_id", nullable = false)
     private Usuarios usuario_id;
+    @Column(name="elementoID",length = 100,nullable = false)
     private String elementoID;
+    @Column(name="destinoID",length = 100,nullable = false)
     private String destinoID;
 
     public CompartirPlaylist() {

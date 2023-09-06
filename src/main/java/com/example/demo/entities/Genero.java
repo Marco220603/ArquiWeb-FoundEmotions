@@ -1,9 +1,17 @@
 package com.example.demo.entities;
 
+@Entity
+@Table(name="generos")
 public class Genero {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_genero;
+    @Column(name="nameGenero",length = 40, nullable = false)
     private String nameGenero;
+    @OneToMany
+    @JoinColumn(name="idArtista")
+    private Artista artista;
 
     public Genero() {
     }

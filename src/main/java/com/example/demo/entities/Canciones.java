@@ -19,7 +19,6 @@ public class Canciones {
    public int getId_canciones() {
       return id_canciones;
    }
-
    public void setId_canciones(int id_canciones) {
       this.id_canciones = id_canciones;
    }

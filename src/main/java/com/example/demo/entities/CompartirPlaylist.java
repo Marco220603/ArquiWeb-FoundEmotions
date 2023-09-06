@@ -14,6 +14,12 @@ public class CompartirPlaylist {
     private String elementoID;
     @Column(name="destinoID",length = 100,nullable = false)
     private String destinoID;
+    @OneToOne
+    @JoinColumn(name="id_playlist")
+    private Playlist playlist;
+    @OneToMany
+    @JoinColumn(name="id_usuario")
+    private Usuarios usuarios;
 
     public CompartirPlaylist() {
     }

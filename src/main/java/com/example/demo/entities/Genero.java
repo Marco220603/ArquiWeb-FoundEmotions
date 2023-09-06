@@ -10,8 +10,11 @@ public class Genero {
     @Column(name="nameGenero",length = 40, nullable = false)
     private String nameGenero;
     @OneToMany
-    @JoinColumn(name="idArtista")
+    @JoinColumn(name="id_Artista")
     private Artista artista;
+    @OneToOne
+    @JoinColumn(name="id_Temperamento")
+    private Temperamento temperamento;
 
     public Genero() {
     }

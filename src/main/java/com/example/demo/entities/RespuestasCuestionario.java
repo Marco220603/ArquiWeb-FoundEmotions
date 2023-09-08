@@ -1,9 +1,19 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "RespuestasCuestionario")
 public class RespuestasCuestionario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_rptacuestionario;
+    @OneToOne
+    @JoinColumn(name = "id_preguntas",referencedColumnName = "id_preguntas")
     private Preguntas preguntas_id;
+    @Column(name="ValorAlernativaSelecc")
     private int AlternativaSeleccionada;
+    @Column(name = "puntaje")
     private int putanje;
 
     public RespuestasCuestionario() {

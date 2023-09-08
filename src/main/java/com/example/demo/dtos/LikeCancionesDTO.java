@@ -1,13 +1,13 @@
 package com.example.demo.dtos;
 import com.example.demo.entities.Canciones;
-import com.example.demo.entities.Usuarios;
+import com.example.demo.entities.Usuario;
 
 import java.time.LocalDate;
 
 public class LikeCancionesDTO
 {
     private int id_likecanciones;
-    private Usuarios usuario_id;
+    private Usuario usuario_id;
     private Canciones cancion_id;;
     private LocalDate fecha;
 
@@ -19,11 +19,11 @@ public class LikeCancionesDTO
         this.id_likecanciones = id_likecanciones;
     }
 
-    public Usuarios getUsuario_id() {
+    public Usuario getUsuario_id() {
         return usuario_id;
     }
 
-    public void setUsuario_id(Usuarios usuario_id) {
+    public void setUsuario_id(Usuario usuario_id) {
         this.usuario_id = usuario_id;
     }
 

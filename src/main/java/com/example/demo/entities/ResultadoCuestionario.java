@@ -1,10 +1,24 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ResultadoCuestionario")
 public class ResultadoCuestionario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_resultadoCuestionario;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario",referencedColumnName = "id_usuario")
     private Usuario usuario_id;
+    @ManyToOne
+    @JoinColumn(name = "id_preguntas",referencedColumnName = "id_preguntas")
     private Preguntas preguntas_id;
+
+    @Column(name = "puntajeTotal")
     private int puntajeTotal;
+    @OneToOne
+    @JoinColumn(name = "id_temperamento",referencedColumnName = "id_temperamento")
     private Temperamento temperamento_id;
 
     public ResultadoCuestionario() {

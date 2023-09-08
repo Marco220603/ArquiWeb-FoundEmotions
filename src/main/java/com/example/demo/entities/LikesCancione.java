@@ -14,7 +14,7 @@ public class LikesCancione {
     @JoinColumn(name = "usuario_id",referencedColumnName = "id_usuario")
     private Usuario usuario_id;
     @OneToOne
-    @JoinColumn(name = "cancion_id",referencedColumnName = "id_cancion")
+    @JoinColumn(name = "id_canciones",referencedColumnName = "id_canciones")
     private Canciones cancion_id;
     @Column(name = "Fecha")
     private LocalDate fecha;

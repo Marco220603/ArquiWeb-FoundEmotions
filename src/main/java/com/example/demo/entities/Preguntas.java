@@ -1,11 +1,22 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Preguntas")
 public class Preguntas {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_preguntas;
+    @Column(name = "textPregunta")
     private String textPregunta;
+    @Column(name = "alternativa1")
     private String Alternativa_1;
+    @Column(name = "alternativa2")
     private String Alternativa_2;
+    @Column(name = "alternativa3")
     private String Alternativa_3;
+    @Column(name = "alternativa4")
     private String Alternativa_4;
 
     public Preguntas() {

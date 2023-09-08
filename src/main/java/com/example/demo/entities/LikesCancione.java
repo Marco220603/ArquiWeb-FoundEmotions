@@ -1,20 +1,28 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+@Entity
+@Table(name = "LikesCancion")
 
 public class LikesCancione {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_likecanciones;
-    private Usuarios usuario_id;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id",referencedColumnName = "id_usuario")
+    private Usuario usuario_id;
+    @OneToOne
+    @JoinColumn(name = "cancion_id",referencedColumnName = "id_cancion")
     private Canciones cancion_id;
+    @Column(name = "Fecha")
     private LocalDate fecha;
 
     public LikesCancione() {
     }
 
-    public LikesCancione(int id_likecanciones, Usuarios usuario_id, Canciones cancion_id, LocalDate fecha) {
+    public LikesCancione(int id_likecanciones, Usuario usuario_id, Canciones cancion_id, LocalDate fecha) {
         this.id_likecanciones = id_likecanciones;
         this.usuario_id = usuario_id;
         this.cancion_id = cancion_id;
@@ -29,11 +37,11 @@ public class LikesCancione {
         this.id_likecanciones = id_likecanciones;
     }
 
-    public Usuarios getUsuario_id() {
+    public Usuario getUsuario_id() {
         return usuario_id;
     }
 
-    public void setUsuario_id(Usuarios usuario_id) {
+    public void setUsuario_id(Usuario usuario_id) {
         this.usuario_id = usuario_id;
     }
 

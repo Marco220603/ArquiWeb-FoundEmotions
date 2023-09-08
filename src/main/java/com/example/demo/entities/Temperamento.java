@@ -1,10 +1,24 @@
 package com.example.demo.entities;
 
+import com.example.demo.entities.Genero;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Temperamento")
 public class Temperamento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_temperamento;
+
+    @Column(name = "nombre",length = 30,nullable = false)
     private String nameTemperamento;
+
+    @Column(name = "descripcion",length = 50)
     private String descriptionTemperamento;
+
+    @OneToOne
+    @JoinColumn(name = "id_genero")
     private Genero genero_id;
 
     public Temperamento() {

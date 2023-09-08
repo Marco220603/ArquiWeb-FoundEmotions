@@ -1,24 +1,31 @@
 package com.example.demo.entities;
 
-public class Canciones {
-   private int id_canciones;
-   private String titulo;
-   private Artista artista_id;
-   private Genero genero_id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "Canciones")
+public class Canciones {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private int id_canciones;
+   @Column(name = "titulo",nullable = false)
+   private String titulo;
+   @ManyToOne
+   @JoinColumn(name = "ArtistaenGenero",referencedColumnName = "")
+   private ArtistaEnGenero idArtistaEnGenero;
    public Canciones() {
    }
 
-   public Canciones(int id_canciones, String titulo, Artista artista_id, Genero genero_id) {
+   public Canciones(int id_canciones, String titulo, ArtistaEnGenero idArtistaEnGenero) {
       this.id_canciones = id_canciones;
       this.titulo = titulo;
-      this.artista_id = artista_id;
-      this.genero_id = genero_id;
+      this.idArtistaEnGenero = idArtistaEnGenero;
    }
 
    public int getId_canciones() {
       return id_canciones;
    }
+
    public void setId_canciones(int id_canciones) {
       this.id_canciones = id_canciones;
    }
@@ -31,19 +38,11 @@ public class Canciones {
       this.titulo = titulo;
    }
 
-   public Artista getArtista_id() {
-      return artista_id;
+   public ArtistaEnGenero getIdArtistaEnGenero() {
+      return idArtistaEnGenero;
    }
 
-   public void setArtista_id(Artista artista_id) {
-      this.artista_id = artista_id;
-   }
-
-   public Genero getGenero_id() {
-      return genero_id;
-   }
-
-   public void setGenero_id(Genero genero_id) {
-      this.genero_id = genero_id;
+   public void setIdArtistaEnGenero(ArtistaEnGenero idArtistaEnGenero) {
+      this.idArtistaEnGenero = idArtistaEnGenero;
    }
 }

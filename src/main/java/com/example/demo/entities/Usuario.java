@@ -1,20 +1,28 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Usuarios {
 
+@Entity
+@Table(name = "usuarios")
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_usuario;
+    @Column(name = "nombre",length = 40,nullable = false)
     private String nameUsuario;
+    @Column(name = "email",length = 40,nullable = false)
     private String email;
+    @Column(name = "password",length = 20,nullable = false)
     private String password;
+    @Column(name = "fechaRegistro",nullable = false)
     private LocalDate fechaRegistra;
 
-    public Usuarios() {
+    public Usuario() {
     }
 
-    public Usuarios(int id_usuario, String nameUsuario, String email, String password, LocalDate fechaRegistra) {
+    public Usuario(int id_usuario, String nameUsuario, String email, String password, LocalDate fechaRegistra) {
         this.id_usuario = id_usuario;
         this.nameUsuario = nameUsuario;
         this.email = email;

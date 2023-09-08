@@ -2,7 +2,7 @@ package com.example.demo.entities;
 
 public class ResultadoCuestionario {
     private int id_resultadoCuestionario;
-    private Usuarios usuario_id;
+    private Usuario usuario_id;
     private Preguntas preguntas_id;
     private int puntajeTotal;
     private Temperamento temperamento_id;
@@ -10,7 +10,7 @@ public class ResultadoCuestionario {
     public ResultadoCuestionario() {
     }
 
-    public ResultadoCuestionario(int id_resultadoCuestionario, Usuarios usuario_id, Preguntas preguntas_id, int puntajeTotal, Temperamento temperamento_id) {
+    public ResultadoCuestionario(int id_resultadoCuestionario, Usuario usuario_id, Preguntas preguntas_id, int puntajeTotal, Temperamento temperamento_id) {
         this.id_resultadoCuestionario = id_resultadoCuestionario;
         this.usuario_id = usuario_id;
         this.preguntas_id = preguntas_id;
@@ -26,11 +26,11 @@ public class ResultadoCuestionario {
         this.id_resultadoCuestionario = id_resultadoCuestionario;
     }
 
-    public Usuarios getUsuario_id() {
+    public Usuario getUsuario_id() {
         return usuario_id;
     }
 
-    public void setUsuario_id(Usuarios usuario_id) {
+    public void setUsuario_id(Usuario usuario_id) {
         this.usuario_id = usuario_id;
     }
 

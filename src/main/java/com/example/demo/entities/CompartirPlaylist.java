@@ -1,37 +1,30 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
+
 @Entity
-@Table (name="CompartirPlaylists")
+@Table(name="CompartirPlaylists")
+
 public class CompartirPlaylist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_compartirPlaylist;
-    @Column(name="playlist", nullable = false)
-    private Playlist playlist_id;
-    @Column(name="usuarios_id", nullable = false)
-    private Usuarios usuario_id;
-    @Column(name="elementoID",length = 100,nullable = false)
-    private String elementoID;
-    @Column(name="destinoID",length = 100,nullable = false)
-    private String destinoID;
     @OneToOne
-    @JoinColumn(name="id_playlist")
-    private Playlist playlist;
-    @OneToMany
-    @JoinColumn(name="id_usuario")
-    private Usuarios usuarios;
+    @JoinColumn(name= "PlaylistdeCancionesEnusuarios",referencedColumnName = "id")
+    private PlaylistdeCancionesEnUsuarios playlistdeCancionesEnUsuarios_id;
+    @Column(name = "elemmentoID")
+    private String elementoID;
+    @Column(name = "destinoID")
+    private String destinoID;
 
     public CompartirPlaylist() {
     }
 
-    public CompartirPlaylist(int id_compartirPlaylist, Playlist playlist_id, Usuarios usuario_id, String elementoID, String destinoID, Playlist playlist, Usuarios usuarios) {
+    public CompartirPlaylist(int id_compartirPlaylist, PlaylistdeCancionesEnUsuarios playlistdeCancionesEnUsuarios_id, String elementoID, String destinoID) {
         this.id_compartirPlaylist = id_compartirPlaylist;
-        this.playlist_id = playlist_id;
-        this.usuario_id = usuario_id;
+        this.playlistdeCancionesEnUsuarios_id = playlistdeCancionesEnUsuarios_id;
         this.elementoID = elementoID;
         this.destinoID = destinoID;
-        this.playlist = playlist_id;
-        this.usuarios = usuario_id;
     }
 
     public int getId_compartirPlaylist() {
@@ -42,20 +35,12 @@ public class CompartirPlaylist {
         this.id_compartirPlaylist = id_compartirPlaylist;
     }
 
-    public Playlist getPlaylist_id() {
-        return playlist_id;
+    public PlaylistdeCancionesEnUsuarios getPlaylistdeCancionesEnUsuarios_id() {
+        return playlistdeCancionesEnUsuarios_id;
     }
 
-    public void setPlaylist_id(Playlist playlist_id) {
-        this.playlist_id = playlist_id;
-    }
-
-    public Usuarios getUsuario_id() {
-        return usuario_id;
-    }
-
-    public void setUsuario_id(Usuarios usuario_id) {
-        this.usuario_id = usuario_id;
+    public void setPlaylistdeCancionesEnUsuarios_id(PlaylistdeCancionesEnUsuarios playlistdeCancionesEnUsuarios_id) {
+        this.playlistdeCancionesEnUsuarios_id = playlistdeCancionesEnUsuarios_id;
     }
 
     public String getElementoID() {
@@ -72,21 +57,5 @@ public class CompartirPlaylist {
 
     public void setDestinoID(String destinoID) {
         this.destinoID = destinoID;
-    }
-    
-    public Playlist getPlaylist() {
-        return playlist;
-    }
-
-    public void setPlaylist(Playlist playlist) {
-        this.playlist = playlist;
-    }
-
-    public Usuarios getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(Usuarios usuarios) {
-        this.usuarios = usuarios;
     }
 }

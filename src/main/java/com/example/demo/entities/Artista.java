@@ -1,19 +1,20 @@
 package com.example.demo.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Artista")
 public class Artista {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_artista;
+    @Column(name = "nombre",length = 45,nullable = false)
     private String nameArtista;
-    private Genero genero_id;
-
-    //holaaaaa
-
     public Artista() {
     }
-
-    public Artista(int id_artista, String nameArtista, Genero genero_id) {
+    public Artista(int id_artista, String nameArtista) {
         this.id_artista = id_artista;
         this.nameArtista = nameArtista;
-        this.genero_id = genero_id;
     }
 
     public int getId_artista() {
@@ -30,13 +31,5 @@ public class Artista {
 
     public void setNameArtista(String nameArtista) {
         this.nameArtista = nameArtista;
-    }
-
-    public Genero getGenero_id() {
-        return genero_id;
-    }
-
-    public void setGenero_id(Genero genero_id) {
-        this.genero_id = genero_id;
     }
 }

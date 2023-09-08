@@ -25,8 +25,8 @@ public class CancionServiceImplement implements ICancionService {
     }
 
     @Override
-    public Canciones listarId(int idAuthor) {
-        return icA.findById(idAuthor).orElse(new Canciones());
+    public Canciones listarId(int id_canciones) {
+        return icA.findById(id_canciones).orElse(new Canciones());
     }
 
     @Override

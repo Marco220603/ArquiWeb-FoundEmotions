@@ -5,48 +5,43 @@ import com.example.demo.entities.Genero;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import java.util.List;
 
 public class TemperamentoDTO {
-    private int id_temperamento;
+    private int id;
+    private String nombre;
+    private String descripcion;
+    private List<Genero> generoid;
 
-
-    private String nameTemperamento;
-
-
-    private String descriptionTemperamento;
-
-
-    private Genero genero_id;
-
-    public int getId_temperamento() {
-        return id_temperamento;
+    public int getId() {
+        return id;
     }
 
-    public void setId_temperamento(int id_temperamento) {
-        this.id_temperamento = id_temperamento;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNameTemperamento() {
-        return nameTemperamento;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNameTemperamento(String nameTemperamento) {
-        this.nameTemperamento = nameTemperamento;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescriptionTemperamento() {
-        return descriptionTemperamento;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescriptionTemperamento(String descriptionTemperamento) {
-        this.descriptionTemperamento = descriptionTemperamento;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public Genero getGenero_id() {
-        return genero_id;
+    public List<Genero> getGeneroid() {
+        return generoid;
     }
 
-    public void setGenero_id(Genero genero_id) {
-        this.genero_id = genero_id;
+    public void setGeneroid(List<Genero> generoid) {
+        this.generoid = generoid;
     }
 }

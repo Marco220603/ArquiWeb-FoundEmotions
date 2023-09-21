@@ -1,48 +1,73 @@
 package com.example.demo.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Canciones")
 public class Canciones {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private int id_canciones;
-   @Column(name = "titulo",nullable = false)
-   private String titulo;
-   @ManyToOne
-   @JoinColumn(name = "ArtistaenGenero",referencedColumnName = "")
-   private ArtistaEnGenero idArtistaEnGenero;
-   public Canciones() {
-   }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "nombre")
+    private String nombre;
+    @ManyToOne
+    @JoinColumn(name = "genero_id",referencedColumnName = "id")
+    private Genero generoid;
+    @ManyToOne
+    @JoinColumn(name = "artista_id",referencedColumnName = "id")
+    private Artista artistaid;
+    @Column(name = "fecha")
+    private LocalDate fecha;
 
-   public Canciones(int id_canciones, String titulo, ArtistaEnGenero idArtistaEnGenero) {
-      this.id_canciones = id_canciones;
-      this.titulo = titulo;
-      this.idArtistaEnGenero = idArtistaEnGenero;
-   }
+    public Canciones() {
+    }
 
-   public int getId_canciones() {
-      return id_canciones;
-   }
+    public Canciones(int id, String nombre, Genero generoid, Artista artistaid, LocalDate fecha) {
+        this.id = id;
+        this.nombre = nombre;
+        this.generoid = generoid;
+        this.artistaid = artistaid;
+        this.fecha = fecha;
+    }
 
-   public void setId_canciones(int id_canciones) {
-      this.id_canciones = id_canciones;
-   }
+    public int getId() {
+        return id;
+    }
 
-   public String getTitulo() {
-      return titulo;
-   }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-   public void setTitulo(String titulo) {
-      this.titulo = titulo;
-   }
+    public String getNombre() {
+        return nombre;
+    }
 
-   public ArtistaEnGenero getIdArtistaEnGenero() {
-      return idArtistaEnGenero;
-   }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-   public void setIdArtistaEnGenero(ArtistaEnGenero idArtistaEnGenero) {
-      this.idArtistaEnGenero = idArtistaEnGenero;
-   }
+    public Genero getGeneroid() {
+        return generoid;
+    }
+
+    public void setGeneroid(Genero generoid) {
+        this.generoid = generoid;
+    }
+
+    public Artista getArtistaid() {
+        return artistaid;
+    }
+
+    public void setArtistaid(Artista artistaid) {
+        this.artistaid = artistaid;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
 }

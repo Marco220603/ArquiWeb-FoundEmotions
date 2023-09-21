@@ -6,7 +6,7 @@ import com.example.demo.entities.Temperamento;
 import java.util.List;
 
 public interface ITemperamentoService {
-    public void insertar(Temperamento temperamento) ;
+    public void insertar(Temperamento temperamento);
 
     public void eliminar(int id_temperamento);
 

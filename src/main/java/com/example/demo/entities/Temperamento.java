@@ -1,64 +1,62 @@
 package com.example.demo.entities;
 
-import com.example.demo.entities.Genero;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name="Temperamento")
+@Table(name = "Temperamento")
 public class Temperamento {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_temperamento;
-
-    @Column(name = "nombre",length = 30,nullable = false)
-    private String nameTemperamento;
-
-    @Column(name = "descripcion",length = 50)
-    private String descriptionTemperamento;
-
-    @OneToOne
-    @JoinColumn(name = "id_genero")
-    private Genero genero_id;
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private int id;
+   @Column(name = "nombre",length = 20,nullable = false)
+   private String nombre;
+   @Column(name = "descripcion",length = 200,nullable = false)
+   private String descripcion;
+   @ManyToMany
+   @JoinColumn(name = "id_genero",referencedColumnName = "id")
+   private List<Genero> generoid;
 
     public Temperamento() {
     }
-    public Temperamento(int id_temperamento, String nameTemperamento, String descriptionTemperamento, Genero genero_id) {
-        this.id_temperamento = id_temperamento;
-        this.nameTemperamento = nameTemperamento;
-        this.descriptionTemperamento = descriptionTemperamento;
-        this.genero_id = genero_id;
+
+    public Temperamento(int id, String nombre, String descripcion, List<Genero> generoid) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.generoid = generoid;
     }
 
-    public int getId_temperamento() {
-        return id_temperamento;
+    public int getId() {
+        return id;
     }
 
-    public void setId_temperamento(int id_temperamento) {
-        this.id_temperamento = id_temperamento;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNameTemperamento() {
-        return nameTemperamento;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNameTemperamento(String nameTemperamento) {
-        this.nameTemperamento = nameTemperamento;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescriptionTemperamento() {
-        return descriptionTemperamento;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescriptionTemperamento(String descriptionTemperamento) {
-        this.descriptionTemperamento = descriptionTemperamento;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public Genero getGenero_id() {
-        return genero_id;
+    public List<Genero> getGeneroid() {
+        return generoid;
     }
 
-    public void setGenero_id(Genero genero_id) {
-        this.genero_id = genero_id;
+    public void setGeneroid(List<Genero> generoid) {
+        this.generoid = generoid;
     }
 }
